@@ -212,6 +212,7 @@ class vitelityapi {
         }
 
         $r =& new HTTP_Request($this->url);
+        $r->addHeader('User-Agent', 'PHP-Vitelity-API class http://github.com/ooglek/PHP-Vitelity-API');
         $r->setMethod(HTTP_REQUEST_METHOD_POST);
         $r->addPostData('login',$this->login); 
         $r->addPostData('pass',$this->pass); 

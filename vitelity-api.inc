@@ -10,6 +10,9 @@
  * Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States License.
  *   http://creativecommons.org/licenses/by-nc-sa/3.0/us/
  *
+ * For Commercial Use, please see the README file under DONATIONS:
+ *    http://github.com/ooglek/PHP-Vitelity-API/tree/master
+ * 
  * Requires PEAR HTTP_Request Library, http://pear.php.net/package/HTTP_Request
  *
  * All functions return FALSE on failure, or on success, either:

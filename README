@@ -1,0 +1,69 @@
+Vitelity API PHP Class
+
+    Based on: http://api.vitelity.net/apihelp.html
+    Written by Peter Beckman <beckman@angryox.com>
+    August 8, 2006
+
+    This work is licensed under a 
+    Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States License.
+    http://creativecommons.org/licenses/by-nc-sa/3.0/us/
+
+    Requires PEAR HTTP_Request Library, http://pear.php.net/package/HTTP_Request
+
+    All functions return FALSE on failure, or on success, either:
+
+        1      the command returned "success"
+        array  an array containing the list returned from the command
+
+    If a failure occurs, $this->errormsg will be set with the reason it failed.
+
+USAGE
+
+    require_once 'vitelity-api.inc';
+    $v = new vitelityapi;
+    $ratecenters = $v->listratecenters('VA');
+
+EXTENSION
+
+    This is how you would modify or extend the _log function in the 
+    vitelityapi class.
+
+        require_once 'vitelity-api.inc';
+        require_once 'your_logging.inc';
+        class vitelityapiextended extends vitelityapi {
+
+            function _log($msg, $level='debug') {
+
+                //  Log output to your own logging function.
+                your_logging($level . '|' . $msg . "\n");
+
+                //  If you want to get the default logging too, keep this line
+                parent::_log($msg, $level);
+            }
+        }
+
+ADMISSIONS
+
+    The code works, but it is not very OO standardized, especially for PHP5.
+    However, it does work, and there are no notices or warnings.  Maybe I'll
+    rewrite it to be able to use the CURL library, or leave code in to allow
+    for both.
+
+AUTHOR
+
+    Peter Beckman <beckman@angryox.com>
+    Original Code Written August 8, 2006
+    Last Updated July 1, 2009
+
+DONATIONS
+
+    If you find this code useful and are using it for non-commercial
+    applications, great!  Enjoy!  If it really saved you a lot of time, energy 
+    and you like my work, Donations are accepted at PayPal to beckman@angryox.com.
+
+    If you would like to use this code for a commercial application, please pay
+    USD $5.00 to the author via PayPal to beckman@angryox.com.  Credit cards are 
+    accepted, though PayPal balance is preferred.  Please include the business
+    name that you are purchasing the waiver for.  Once payment is received, the
+    Author will email you to confirm the waiving of the Noncommercial portion 
+    of this license for the named commercial business entity.
